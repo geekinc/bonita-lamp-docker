@@ -44,7 +44,9 @@ RUN a2enmod rewrite
 
 # Configure /app folder with slim app
 RUN git clone https://github.com/geekinc/bonita-slim /app
-RUN mkdir -p /app 
+RUN mkdir -p /app \
+ 	&& cd /app \
+ 	&& php composer.phar update \
 	&& rm -fr /var/www/html \
 	&& ln -s /app/public /var/www/html \
 	&& ln -s /app/src /var/www/src \
