@@ -52,7 +52,8 @@ RUN mkdir -p /app \
 	&& ln -s /app/src /var/www/src \
 	&& ln -s /app/vendor /var/www/vendor \
 	&& ln -s /app/config /var/www/config \
-	&& ln -s /app/.env.docker /var/www/.env
+	&& rm -fr /app/.env \
+	&& ln -s /app/.env.docker /app/.env
 
 #Environment variables to configure php
 ENV PHP_UPLOAD_MAX_FILESIZE 10M
