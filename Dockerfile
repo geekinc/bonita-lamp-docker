@@ -4,21 +4,22 @@ MAINTAINER Jérémy Jacquier-Roux <jeremy.jacquier-roux@bonitasoft.org>
 
 # install packages
 RUN apt-get update && apt-get install -y \
+  apache2 \
+  git \
+  libapache2-mod-php5 \
   mysql-client-core-5.5 \
+  mysql-server \
   openjdk-7-jre-headless \
+  php-apc \
+  php5-curl \
+  php5-mysql \
+  php5-mcrypt \
   postgresql-client \
+  pwgen \
+  supervisor \
   unzip \
   wget \
   zip \
-  supervisor \
-  git \
-  apache2 \
-  mysql-server \
-  libapache2-mod-php5 \
-  php5-mysql \
-  pwgen \
-  php-apc \
-  php5-mcrypt \
   && rm -rf /var/lib/apt/lists/* \
   && echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
